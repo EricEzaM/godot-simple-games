@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Card/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CardGrid/Grid.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+number_of_cards = 200
+
+[node name="TextureRect" parent="GridContainer" instance=ExtResource( 1 )]
+margin_right = 248.0
+margin_bottom = 248.0
+
+[node name="TextureRect2" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 252.0
+margin_right = 500.0
+margin_bottom = 248.0
+
+[node name="TextureRect3" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 252.0
+margin_right = 248.0
+margin_bottom = 500.0
+
+[node name="TextureRect4" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 252.0
+margin_top = 252.0
+margin_right = 500.0
+margin_bottom = 500.0

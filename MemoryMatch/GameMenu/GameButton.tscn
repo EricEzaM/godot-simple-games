@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GameMenu/Icons/question.png" type="Texture" id=1]
+[ext_resource path="res://GameMenu/Backgrounds/grey_panel.png" type="Texture" id=2]
+[ext_resource path="res://GameMenu/GameButton.gd" type="Script" id=3]
+[ext_resource path="res://GameMenu/BasicButtonColorConfig.tres" type="Resource" id=4]
+
+[node name="GameButton" type="Button"]
+anchor_right = 0.0195313
+anchor_bottom = 0.0333333
+margin_bottom = -1.90735e-06
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+button_color_config = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color( 0.0352941, 0.560784, 0.87451, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
