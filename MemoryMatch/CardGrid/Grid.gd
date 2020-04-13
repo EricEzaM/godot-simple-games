@@ -4,16 +4,18 @@ extends GridContainer
 export (int) var number_of_cards = 4
 onready var card = preload("res://Card/Card.tscn")
 
+var match_pairs = []
 
 func _ready():
 	remove_all_cards()
 	initialise_cards(number_of_cards)
+	_create_match_pairs()
 
 
 func initialise_cards(num_cards : int):	
 	#	Calculate grid size and set columns
 	var grid_size = calculate_grid_size(num_cards)
-	
+	var grid_size_ratio = grid_size.x / grid_size.y # x dimension = y * ratio dimension = x / ratio
 	#	Error catching
 	if grid_size == Vector2():
 		return
@@ -26,25 +28,18 @@ func initialise_cards(num_cards : int):
 		var card_inst = card.instance()
 		card_inst.id = i
 		add_child(card_inst)
-	print("grid size: %s" % grid_size)
-	#	TODO: Fully construct the rest of the UI around this and rework this
-	#	calculation if needed
+
+	# Set size of grid container to fill parent, depending on layout of cards
 	var parent_size = get_parent().rect_size
-	# print("parent_size: %s" % parent_size)
-	# var max_dimension = min(parent_size.y, parent_size.x)
-	# print("max dimension: %s" % max_dimension)
-	# #	Set size of grid container to format card spacing
-	# rect_size = grid_size / min(grid_size.y, grid_size.x) * max_dimension
-	# print("rect size: %s" % rect_size)
-	# if rect_size.x > parent_size.x:
-	# 	rect_size.x = parent_size.x
-	# 	rect_size.y = parent_size.x * (parent_size.y / parent_size.x)
-	# 	print("rect size adj: %s" % rect_size)
 	if grid_size.x > grid_size.y: 
-		# x is longest dimensions, thus fills all of parent width
+		# x is longest dimension, thus fill all of parent width
 		rect_size.x = parent_size.x
-		var xy_ratio = grid_size.x / grid_size.y # x = ratio * y, y is x / ratio
-		rect_size.y = parent_size.x / xy_ratio
+		rect_size.y = parent_size.x / grid_size_ratio
+	else:
+		# y is longer dimension, thus fill all of parent height
+		rect_size.y = parent_size.y
+		rect_size.x = parent_size.y * grid_size_ratio
+		
 	#	Center grid, but keep the rect_size that was set above
 	set_anchors_and_margins_preset(Control.PRESET_CENTER, Control.PRESET_MODE_KEEP_SIZE)
 
@@ -92,6 +87,26 @@ func _calculate_factors(n: int) -> Array:
 			fct.append(i)
 	return fct
 
+
+func _create_match_pairs():
+	# Array with card id's: 0...number_of_cards
+	var all_cards = range(number_of_cards)
+
+	randomize()
+	# The number of matches = number of cards / 2
+	for _i in range(number_of_cards/2):
+		# Get random card id from all_cards
+		var id1 = randi() % all_cards.size()
+		# Remove that id from the card list so it can't be chosen again
+		all_cards.erase(id1)
+		# Repeat
+		var id2 = randi() % all_cards.size()
+		all_cards.erase(id2)
+
+		# Pairs will be stored as 2-element arrays
+		match_pairs.append([id1, id2])
+
+	print(match_pairs)
 
 class FactorSorter:
 	var root : float 
