@@ -5,7 +5,6 @@ export (int) var number_of_cards = 4
 onready var card = preload("res://Card/Card.tscn")
 onready var gc : GridContainer = $GridContainer
 
-var match_pairs = []
 var cards = []
 
 func _ready():
