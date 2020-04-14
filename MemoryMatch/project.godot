@@ -12,10 +12,22 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "ButtonColorConfig",
 "language": "GDScript",
-"path": "res://Common/Menu/ButtonColorConfig.gd"
+"path": "res://Common/User Interface/ButtonColorConfig.gd"
+}, {
+"base": "Resource",
+"class": "Event",
+"language": "GDScript",
+"path": "res://Common/Events/Event.gd"
+}, {
+"base": "Resource",
+"class": "EventOneParam",
+"language": "GDScript",
+"path": "res://Common/Events/EventOneParam.gd"
 } ]
 _global_script_class_icons={
-"ButtonColorConfig": ""
+"ButtonColorConfig": "",
+"Event": "",
+"EventOneParam": ""
 }
 
 [application]

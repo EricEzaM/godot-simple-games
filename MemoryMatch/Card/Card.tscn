@@ -11,7 +11,7 @@ shader_param/border_thickness = 0.0
 shader_param/border_smoothing_distance = 0.2
 shader_param/border_color = Color( 1, 0, 0, 1 )
 
-[node name="TextureRect" type="TextureRect"]
+[node name="Card" type="TextureRect"]
 material = SubResource( 1 )
 margin_right = 50.0
 margin_bottom = 50.0
