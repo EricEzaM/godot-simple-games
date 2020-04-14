@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal card_flipped(card)
+
 var id = -1
 var pair_number = -1
 var _reset_color := Color(0,0,0,0)
@@ -15,7 +17,18 @@ func _ready():
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		print("Clicked " + str(id) + " which is part of paie #" + str(pair_number))
+		print("Clicked " + str(id) + " which is part of pair #" + str(pair_number))
+		emit_signal("card_flipped", self)
+
+
+func show():
+	# TODO: Implement
+	pass
+
+
+func hide():
+	# TODO: Implement
+	pass
 
 
 func _on_hover():

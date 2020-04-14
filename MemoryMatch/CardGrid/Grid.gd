@@ -4,6 +4,7 @@ export (int) var number_of_cards = 4
 
 onready var card = preload("res://Card/Card.tscn")
 onready var gc : GridContainer = $GridContainer
+onready var state_handler = $StateHandler
 
 var cards = []
 
@@ -27,6 +28,7 @@ func initialise_cards(num_cards : int):
 	for i in range(num_cards):
 		var card_inst = card.instance()
 		card_inst.id = i
+		card_inst.connect("card_flipped", state_handler, "_on_card_flipped")
 		cards.append(card_inst)
 		gc.add_child(card_inst)
 
