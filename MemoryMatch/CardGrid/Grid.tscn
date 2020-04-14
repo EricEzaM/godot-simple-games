@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+number_of_cards = 36
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchor_left = 0.5

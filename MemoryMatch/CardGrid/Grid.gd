@@ -6,7 +6,7 @@ onready var card = preload("res://Card/Card.tscn")
 onready var gc : GridContainer = $GridContainer
 
 var match_pairs = []
-
+var cards = []
 
 func _ready():
 	remove_all_cards()
@@ -28,6 +28,7 @@ func initialise_cards(num_cards : int):
 	for i in range(num_cards):
 		var card_inst = card.instance()
 		card_inst.id = i
+		cards.append(card_inst)
 		gc.add_child(card_inst)
 
 	# Recalculate the size of the grid container so it fits all the cards
@@ -86,23 +87,31 @@ func _calculate_factors(n: int) -> Array:
 
 
 func _create_match_pairs():
-	# Array with card id's, since cards are just given sequential numbers as ids
-	var all_cards = range(number_of_cards)
-
+	# Use this to track which indices of 'cards' have been assigned a pair
+	var remaining_indices = range(number_of_cards)
 	randomize()
-	# The number of matches = number of cards / 2
-	for _i in range(number_of_cards/2):
-		# Get random card id from all_cards
-		var id1 = randi() % all_cards.size()
-		# Remove that id from the card list so it can't be chosen again
-		all_cards.erase(id1)
-		# Repeat
-		var id2 = randi() % all_cards.size()
-		all_cards.erase(id2)
 
-		# Pairs will be stored as 2-element arrays
-		match_pairs.append([id1, id2])
+	for pair_number in range(number_of_cards/2):
+		# Get 2 random cards, removing them from remaining cards after selection
+		# So they cannot be selected again
+		var i1 = randi() % remaining_indices.size()
+		var card_1 = cards[remaining_indices[i1]]
+		remaining_indices.remove(i1)
 
+		var i2 = randi() % remaining_indices.size()
+		var card_2 = cards[remaining_indices[i2]]
+		remaining_indices.remove(i2)
+
+		card_1.pair_number = pair_number
+		card_2.pair_number = pair_number
+
+func _filter_array(arr : Array, predicate : FuncRef) -> Array:
+	var filtered = []
+	for e in arr:
+		if predicate.call_func(e):
+			filtered.append(e)
+	
+	return filtered
 
 # Custom sorter to sort an array by how close the values are to the square root
 # of some number

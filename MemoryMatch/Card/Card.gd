@@ -1,6 +1,7 @@
 extends TextureRect
 
 var id = -1
+var pair_number = -1
 var _reset_color := Color(0,0,0,0)
 var color := Color(0,0,0,0)
 
@@ -14,7 +15,7 @@ func _ready():
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		print("Clicked " + str(id))
+		print("Clicked " + str(id) + " which is part of paie #" + str(pair_number))
 
 
 func _on_hover():
