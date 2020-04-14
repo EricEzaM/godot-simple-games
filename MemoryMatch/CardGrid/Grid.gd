@@ -61,8 +61,10 @@ func calculate_grid_size(n: int	) -> Vector2:
 
 
 func remove_all_cards():
-	for child in gc.get_children():
-		remove_child(child)
+	var gc_children = gc.get_children()
+	for child in gc_children:
+		gc.remove_child(child)
+	print(gc.get_child_count())
 
 
 func _get_card_rect_size():
