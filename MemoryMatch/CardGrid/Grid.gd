@@ -17,7 +17,6 @@ func _ready():
 	_create_match_pairs()
 	_reset_state()
 
-
 func initialise_cards(num_cards : int):	
 	remove_all_cards()
 	#	Calculate grid size and set columns
@@ -60,7 +59,9 @@ func calculate_grid_size(n: int	) -> Vector2:
 	var grid_dims = fct.slice(0,1) # take top 2 elements
 	
 	# factors must be reasonably close
-	
+	if abs(fct[0] - fct[1]) > 3:
+		print("Bad factors")
+		return Vector2()
 	
 	#	If the number can make a perfect square, then do that
 	if fct[0] == sqrt(n):

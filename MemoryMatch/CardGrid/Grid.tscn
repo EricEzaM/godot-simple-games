@@ -17,7 +17,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-number_of_cards = 36
+number_of_cards = 28
 card_back_texture = ExtResource( 5 )
 texture_set = ExtResource( 6 )
 
