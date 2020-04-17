@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Common/Events/EventTwoParam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+param_1_description = "Current Count"
+param_2_description = "Max Count"

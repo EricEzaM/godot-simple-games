@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Card/icon.png" type="Texture" id=1]
 [ext_resource path="res://Common/Fonts/Montserrat-Regular-30.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GameMenu/ScoreLabel.gd" type="Script" id=3]
+[ext_resource path="res://CardGrid/Events/MatchCountUpdated.tres" type="Resource" id=4]
 [ext_resource path="res://GameMenu/Buttons/SettingsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameMenu/Buttons/BackButton.tscn" type="PackedScene" id=6]
 
@@ -50,9 +52,11 @@ size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 text = "0 / 4"
 valign = 1
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+match_count_updated_event = ExtResource( 4 )
 
 [node name="BackButton" parent="." instance=ExtResource( 6 )]
 anchor_top = 0.5
