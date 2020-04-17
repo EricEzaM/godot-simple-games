@@ -31,11 +31,13 @@ vec4 border_smooth(vec2 _uv){
 	vec2 tl = smoothstep(vec2(border_thickness), vec2(border_thickness + border_smoothing_distance), _uv);
 	vec2 br = smoothstep(vec2(border_thickness), vec2(border_thickness + border_smoothing_distance), vec2(1) - _uv);
 	
-	return vec4(1) - vec4(tl.x * tl.y * br.x * br.y);
+	// We don't want the border to add alpha, so keep the alpha of it zero
+	return vec4(1) - vec4(vec3(tl.x * tl.y * br.x * br.y), 0);
 }
 
 void fragment(){
 	vec4 tx = texture(TEXTURE, UV);
 	vec4 border = border_smooth(UV);
-	COLOR = mix(tx, border * border_color, border.a * border_color.a) * tx.a;
+	//	Border alpha can be changed via color property
+	COLOR = mix(tx, border * border_color, border.r * border_color.a) * tx.a;
 }
