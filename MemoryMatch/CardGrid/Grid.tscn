@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Card/Card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CardGrid/Grid.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Card/icon.png" type="Texture" id=5]
 [ext_resource path="res://CardGrid/CardImageOptions/BasicTextureSet.tres" type="Resource" id=6]
 [ext_resource path="res://CardGrid/Events/MatchCountUpdated.tres" type="Resource" id=7]
-[ext_resource path="res://Common/Fonts/Montserrat-Regular-30.tres" type="DynamicFont" id=8]
 
 [node name="Grid" type="Control"]
 anchor_right = 1.0
@@ -68,14 +67,3 @@ match_count_updated_event = ExtResource( 7 )
 [node name="ResetTimer" type="Timer" parent="GridState"]
 wait_time = 2.0
 one_shot = true
-
-[node name="Label" type="Label" parent="."]
-margin_right = 138.0
-margin_bottom = 37.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Card 1:
-Card 2:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
