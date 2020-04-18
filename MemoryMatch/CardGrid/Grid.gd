@@ -39,6 +39,12 @@ func initialise_cards(num_cards : int):
 	# Recalculate the size of the grid container so it fits all the cards
 	# and fills all the space possible
 	grid_container.recalculate_size(rect_size, grid_size)
+	
+	# Set the pivot for flipping animations.
+	# This is done after spawning cards because they will change size
+	# when the grid size changes
+	for card in grid_container.get_children():
+		card.rect_pivot_offset = card.rect_size / 2
 
 
 func calculate_grid_size(n: int	) -> Vector2:

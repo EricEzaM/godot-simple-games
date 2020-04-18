@@ -2,6 +2,9 @@ extends TextureRect
 
 signal card_shown(card)
 
+
+onready var anim_player = $AnimationPlayer
+
 var id = -1
 var pair_id = -1
 export (Color) var border_color := Color(0,0,0,0)
@@ -31,17 +34,26 @@ func initialise_card(p_pair_id, p_show_texture, p_hide_texture):
 
 
 func show():
-	texture = show_texture
+	anim_player.play("Flip")
+#	texture = show_texture
 	pass
 
 
 func hide():
-	texture = hide_texture
+#	texture = hide_texture
+	anim_player.play("Flip")
 	pass
 
 
 func set_matched():
 	state = State.Matched
+
+
+func _toggle_texture():
+	if texture == show_texture:
+		texture = hide_texture
+	else:
+		texture = show_texture
 
 
 func _on_gui_input(event):
