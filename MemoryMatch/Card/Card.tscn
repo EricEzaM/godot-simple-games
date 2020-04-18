@@ -24,6 +24,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+border_color = Color( 0.870588, 0.870588, 0.870588, 0.443137 )
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_hover"]
 [connection signal="mouse_exited" from="." to="." method="_on_hover_exit"]

@@ -1,11 +1,11 @@
 extends TextureRect
 
-signal card_clicked(card)
+signal card_shown(card)
 
 var id = -1
-var pair_number = -1
+var pair_id = -1
+export (Color) var border_color := Color(0,0,0,0)
 var _reset_color := Color(0,0,0,0)
-var color := Color(0,0,0,0)
 
 var show_texture: Texture
 var hide_texture: Texture
@@ -21,12 +21,11 @@ enum State {
 func _ready():
 	#	Duplicate the material to get a unique instance
 	set_material(get_material().duplicate())
-	color = material.get_shader_param("border_color")
 	_set_border_color(_reset_color)
 
 
-func initialise_card(p_pair_number, p_show_texture, p_hide_texture):
-	pair_number = p_pair_number
+func initialise_card(p_pair_id, p_show_texture, p_hide_texture):
+	pair_id = p_pair_id
 	show_texture = p_show_texture
 	hide_texture = p_hide_texture
 
@@ -41,13 +40,17 @@ func hide():
 	pass
 
 
+func set_matched():
+	state = State.Matched
+
+
 func _on_gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		emit_signal("card_clicked", self)
+	if event is InputEventMouseButton and event.pressed and state == State.Unmatched:
+		emit_signal("card_shown", self)
 
 
 func _on_hover():
-	_set_border_color(color)
+	_set_border_color(border_color)
 
 
 func _on_hover_exit():

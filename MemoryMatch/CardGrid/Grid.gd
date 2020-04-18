@@ -5,8 +5,8 @@ export (Texture) var card_back_texture
 export (Resource) var texture_set
 
 onready var card = preload("res://Card/Card.tscn")
-onready var gc : GridContainer = $GridContainer
-onready var state_handler = $StateHandler
+onready var grid_container : GridContainer = $GridContainer
+onready var grid_state = $GridState
 
 var cards = []
 var unused_texture_ids = []
@@ -15,7 +15,7 @@ func _ready():
 	unused_texture_ids = range(texture_set.textures.size())
 	initialise_cards(number_of_cards)
 	_create_match_pairs()
-	_reset_state()
+	grid_state.reset(number_of_cards / 2)
 
 func initialise_cards(num_cards : int):	
 	remove_all_cards()
@@ -26,25 +26,27 @@ func initialise_cards(num_cards : int):
 		return
 	
 	#	Set columns to the x value
-	gc.columns = grid_size.x
+	grid_container.columns = grid_size.x
 	
 	#	Spawn cards
 	for i in range(num_cards):
 		var card_inst = card.instance()
 		card_inst.id = i
-		card_inst.connect("card_clicked", state_handler, "_on_card_clicked")
+		card_inst.connect("card_shown", grid_state, "_on_card_shown")
 		cards.append(card_inst)
-		gc.add_child(card_inst)
+		grid_container.add_child(card_inst)
 
 	# Recalculate the size of the grid container so it fits all the cards
 	# and fills all the space possible
-	gc.recalculate_size(rect_size, grid_size)
+	grid_container.recalculate_size(rect_size, grid_size)
 
 
 func calculate_grid_size(n: int	) -> Vector2:
 	#	Check that there is no odd card!
 	if n % 2 != 0:
-		# TODO: give feedback to the player about this error
+		# TODO: move this to some more general validation method and use it to 
+		# validate UI input, so game cannot be started with odd number of cards,
+		# or cards with bad factors (as below)
 		print("Number of cards must be even. %s is not an even number." % n)
 		return Vector2()
 	
@@ -73,38 +75,17 @@ func calculate_grid_size(n: int	) -> Vector2:
 
 
 func remove_all_cards():
-	var gc_children = gc.get_children()
-	for child in gc_children:
-		gc.remove_child(child)
-	print(gc.get_child_count())
-
-
-func _get_card_rect_size():
-	var card_inst = card.instance()
-	var size = card_inst.rect_size	
-	card_inst.queue_free()
-	return size
-
-
-func _calculate_factors(n: int) -> Array:
-	var fct = []
-	
-	# This is not the fastest method of doing this, but it doesnt matter
-	# since the number of cards is small enough not to matter
-	for i in range(1, n+1):
-		if n % i == 0:
-			fct.append(i)
-	return fct
+	var all_cards = grid_container.get_children()
+	for child in all_cards:
+		grid_container.remove_child(child)
 
 
 func _create_match_pairs():
-	state_handler.max_match_count = number_of_cards / 2
-	
 	# Use this to track which indices of 'cards' have been assigned a pair
 	var remaining_indices = range(number_of_cards)
 	randomize()
 
-	for pair_number in range(number_of_cards/2):
+	for pair_id in range(number_of_cards/2):
 		# Get 2 random cards, removing them from remaining cards after selection
 		# So they cannot be selected again
 		var i1 = randi() % remaining_indices.size()
@@ -120,12 +101,24 @@ func _create_match_pairs():
 		var tex = texture_set.textures[tex_idx]
 		unused_texture_ids.erase(tex_idx)
 
-		card_1.initialise_card(pair_number, tex, card_back_texture)
-		card_2.initialise_card(pair_number, tex, card_back_texture)
+		card_1.initialise_card(pair_id, tex, card_back_texture)
+		card_2.initialise_card(pair_id, tex, card_back_texture)
 
 
-func _reset_state():
-	state_handler.reset(number_of_cards/2)
+func _get_card_rect_size():
+	var card_inst = card.instance()
+	var size = card_inst.rect_size	
+	card_inst.queue_free()
+	return size
+
+
+func _calculate_factors(n: int) -> Array:
+	var fct = []
+
+	for i in range(1, n+1):
+		if n % i == 0:
+			fct.append(i)
+	return fct
 
 
 func _filter_array(arr : Array, predicate : FuncRef) -> Array:
@@ -136,8 +129,7 @@ func _filter_array(arr : Array, predicate : FuncRef) -> Array:
 	
 	return filtered
 
-# Custom sorter to sort an array by how close the values are to the square root
-# of some number
+# Custom sorter to sort an array by how close the values are to another number
 class FactorSorter:
 	var root : float 
 	func sort(a, b):
