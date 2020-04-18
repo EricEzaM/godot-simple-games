@@ -3,7 +3,7 @@ extends Label
 export (Resource) var tries_count_updated_event: Resource
 
 func _ready():
-	tries_count_updated_event.connect("event_signal", self, "_update_score")
+	tries_count_updated_event.connect("event_signal", self, "_update_tries")
 	pass
 
 

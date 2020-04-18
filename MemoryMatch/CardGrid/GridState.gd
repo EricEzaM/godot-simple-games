@@ -5,10 +5,12 @@ signal game_over
 
 onready var reset_timer: Timer = $ResetTimer
 export (Resource) var match_count_updated_event
+export (Resource) var tries_count_updated_event
 
 var card_1
 var card_2
 
+var tries_count = 0
 var match_count = 0
 var max_match_count = -1
 
@@ -18,9 +20,11 @@ func _ready():
 
 
 func reset(max_matches: int):
+	tries_count = 0
 	match_count = 0
 	max_match_count = max_matches
 	match_count_updated_event.emit_signal("event_signal", match_count, max_match_count)
+	tries_count_updated_event.emit_signal("event_signal", 0)
 	_reset_card_selection()
 
 
@@ -37,7 +41,10 @@ func _on_card_shown(card):
 		card_1 = card
 		return
 
+	tries_count += 1
 	card_2 = card
+	tries_count_updated_event.emit_signal("event_signal", tries_count)
+	
 	if card_1.pair_id == card.pair_id:
 		_cards_match()
 	else:
