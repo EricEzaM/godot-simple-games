@@ -34,14 +34,12 @@ func initialise_card(p_pair_id, p_show_texture, p_hide_texture):
 
 
 func show():
-	anim_player.play("Flip")
-#	texture = show_texture
+	anim_player.play("flip")
 	pass
 
 
 func hide():
-#	texture = hide_texture
-	anim_player.play("Flip")
+	anim_player.play("flip")
 	pass
 
 
