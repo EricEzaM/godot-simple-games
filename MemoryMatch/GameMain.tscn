@@ -9,6 +9,7 @@
 script = ExtResource( 4 )
 
 [node name="Levels" type="Node2D" parent="."]
+position = Vector2( 0, -2 )
 
 [node name="MainMenu" parent="Levels" instance=ExtResource( 1 )]
 layer = -1
