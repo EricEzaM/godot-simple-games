@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://User Interface/ConfirmationDialog/ConfirmationDialog.gd" type="Script" id=2]
+
+[node name="ConfimationDialog" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -249.0
+margin_top = -40.0
+margin_right = 249.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 350, 70 )
+theme = ExtResource( 1 )
+window_title = "The quick brown fox jumps over the lazy dog"
+resizable = true
+dialog_text = "Some text"
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

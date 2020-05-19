@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://User Interface/Styles/ButtonHover.tres" type="StyleBox" id=1]
+[ext_resource path="res://User Interface/Styles/Button.tres" type="StyleBox" id=2]
+[ext_resource path="res://User Interface/Styles/ButtonPress.tres" type="StyleBox" id=3]
+[ext_resource path="res://User Interface/Game/Icons/question.png" type="Texture" id=4]
+
+[node name="GameButton" type="Button"]
+margin_right = 175.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 175, 40 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+align = 2
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="ContentContainer"]
+modulate = Color( 0.992157, 0.992157, 0.992157, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="ContentContainer"]
+margin_left = 40.0
+margin_right = 175.0
+margin_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+text = "My Text"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://User Interface/Menus/Main/MainMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://User Interface/Menus/Options/OptionsMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameManager.gd" type="Script" id=4]
+[ext_resource path="res://User Interface/ConfirmationDialog/Confirmation.tscn" type="PackedScene" id=6]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="MainMenu" parent="Levels" instance=ExtResource( 1 )]
+layer = -1
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 2 )]
+
+[node name="ConfimationDialog" parent="." instance=ExtResource( 6 )]
+layer = 50
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="Sounds" type="AudioStreamPlayer" parent="."]

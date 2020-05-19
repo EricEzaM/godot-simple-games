@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Card/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Card Grid/Grid.gd" type="Script" id=2]
+[ext_resource path="res://Card Grid/GridContainer.gd" type="Script" id=3]
+[ext_resource path="res://Card Grid/GridState.gd" type="Script" id=4]
+[ext_resource path="res://Common/GameConfiguration.tres" type="Resource" id=5]
+
+[node name="Grid" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+game_configuration = ExtResource( 5 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card" parent="GridContainer" instance=ExtResource( 1 )]
+margin_right = 149.0
+margin_bottom = 149.0
+
+[node name="Card2" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 151.0
+margin_right = 300.0
+margin_bottom = 149.0
+
+[node name="Card3" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 151.0
+margin_right = 149.0
+margin_bottom = 300.0
+
+[node name="Card4" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 151.0
+margin_top = 151.0
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="GridState" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="ResetTimer" type="Timer" parent="GridState"]
+wait_time = 2.0
+one_shot = true

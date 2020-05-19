@@ -31,6 +31,7 @@ func initialise_card(p_pair_id, p_show_texture, p_hide_texture):
 	pair_id = p_pair_id
 	show_texture = p_show_texture
 	hide_texture = p_hide_texture
+	texture = hide_texture
 
 
 func show():
@@ -45,6 +46,10 @@ func hide():
 
 func set_matched():
 	state = State.Matched
+
+
+func update_pivot():
+	rect_pivot_offset = rect_size / 2
 
 
 func _toggle_texture():
