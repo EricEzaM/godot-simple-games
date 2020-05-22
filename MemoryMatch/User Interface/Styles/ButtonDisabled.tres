@@ -1,17 +1,17 @@
 [gd_resource type="StyleBoxFlat" format=2]
 
 [resource]
-bg_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+bg_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 border_width_left = 3
-border_width_top = 20
+border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.0823529, 0.305882, 0.454902, 1 )
+border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 expand_margin_left = 2.0
 expand_margin_right = 2.0
-expand_margin_top = 20.0
+expand_margin_top = 2.0
 expand_margin_bottom = 2.0

@@ -10,6 +10,7 @@ signal toggle_options(show_options)
 signal match_count_updated(count, max_count)
 signal tries_count_updated(count)
 
+signal game_complete(tries_count, match_count)
 # --- Enums
 # --- Constants
 # --- Exported Variables

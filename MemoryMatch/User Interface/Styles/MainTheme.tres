@@ -1,12 +1,20 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://User Interface/Styles/Button.tres" type="StyleBox" id=1]
 [ext_resource path="res://User Interface/Styles/ButtonHover.tres" type="StyleBox" id=2]
 [ext_resource path="res://User Interface/Styles/ButtonPress.tres" type="StyleBox" id=3]
-[ext_resource path="res://User Interface/Styles/PanelWhite.tres" type="StyleBox" id=4]
+[ext_resource path="res://User Interface/Styles/Panel.tres" type="StyleBox" id=4]
 [ext_resource path="res://User Interface/Styles/LineEdit.tres" type="StyleBox" id=5]
-[ext_resource path="res://User Interface/spinbox_updown.png" type="Texture" id=6]
+[ext_resource path="res://User Interface/Menus/Icons/spinbox_updown.png" type="Texture" id=6]
+[ext_resource path="res://User Interface/Styles/PanelDialog.tres" type="StyleBox" id=7]
 [ext_resource path="res://Common/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=8]
+[ext_resource path="res://User Interface/Styles/Slider.tres" type="StyleBox" id=9]
+[ext_resource path="res://User Interface/Styles/SliderGrabberArea.tres" type="StyleBox" id=10]
+[ext_resource path="res://User Interface/Menus/Icons/slider-grabber.png" type="Texture" id=11]
+[ext_resource path="res://User Interface/Menus/Icons/slider-grabber-hover.png" type="Texture" id=12]
+[ext_resource path="res://User Interface/Styles/ButtonDisabled.tres" type="StyleBox" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [resource]
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
@@ -14,12 +22,36 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = null
-Button/styles/disabled = null
-Button/styles/focus = null
+Button/fonts/font = ExtResource( 8 )
+Button/styles/disabled = ExtResource( 13 )
+Button/styles/focus = SubResource( 1 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = ExtResource( 3 )
+CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = null
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+HSlider/icons/grabber = ExtResource( 11 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 12 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = ExtResource( 10 )
+HSlider/styles/slider = ExtResource( 9 )
 Label/colors/font_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -42,14 +74,44 @@ LineEdit/icons/clear = null
 LineEdit/styles/focus = null
 LineEdit/styles/normal = ExtResource( 5 )
 LineEdit/styles/read_only = null
-Panel/styles/panel = ExtResource( 4 )
+MenuButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+MenuButton/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
+MenuButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+MenuButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+MenuButton/constants/hseparation = 3
+MenuButton/fonts/font = null
+MenuButton/styles/disabled = null
+MenuButton/styles/focus = null
+MenuButton/styles/hover = null
+MenuButton/styles/normal = null
+MenuButton/styles/pressed = null
+Panel/styles/panel = ExtResource( 7 )
+PanelContainer/styles/panel = ExtResource( 4 )
+PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = ExtResource( 8 )
+PopupMenu/icons/checked = null
+PopupMenu/icons/radio_checked = null
+PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = null
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = ExtResource( 3 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
 SpinBox/icons/updown = ExtResource( 6 )
 WindowDialog/colors/title_color = Color( 0.992157, 0.992157, 0.992157, 1 )
 WindowDialog/constants/close_h_ofs = 18
 WindowDialog/constants/close_v_ofs = 18
 WindowDialog/constants/scaleborder_size = 4
-WindowDialog/constants/title_height = 20
-WindowDialog/fonts/title_font = null
+WindowDialog/constants/title_height = 24
+WindowDialog/fonts/title_font = ExtResource( 8 )
 WindowDialog/icons/close = null
 WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = ExtResource( 4 )
+WindowDialog/styles/panel = ExtResource( 7 )

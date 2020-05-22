@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spinbox_updown.png-87b2c7e037339388d689842e81d9ca30.stex"
+path="res://.import/slider-grabber.png-cfa466b7b9e20924b862daa16cbdaddc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/spinbox_updown.png"
-dest_files=[ "res://.import/spinbox_updown.png-87b2c7e037339388d689842e81d9ca30.stex" ]
+source_file="res://User Interface/Menus/Icons/slider-grabber.png"
+dest_files=[ "res://.import/slider-grabber.png-cfa466b7b9e20924b862daa16cbdaddc.stex" ]
 
 [params]
 

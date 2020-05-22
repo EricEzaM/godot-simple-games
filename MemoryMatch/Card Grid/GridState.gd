@@ -54,6 +54,10 @@ func _cards_match():
 
 	match_count += 1
 	Events.emit_signal("match_count_updated", match_count, max_match_count)
+	
+	if match_count == max_match_count:
+#		Game finished!
+		Events.emit_signal("game_complete", tries_count, match_count)
 
 
 func _cards_different():

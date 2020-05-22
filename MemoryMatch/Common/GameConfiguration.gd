@@ -1,4 +1,4 @@
-class_name GameConfiguration
+#class_name GameConfiguration
 extends Resource
 # Stores configuration for the game.
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Card/icon.png" type="Texture" id=1]
+[ext_resource path="res://User Interface/Game/Icons/swap.svg" type="Texture" id=2]
 [ext_resource path="res://User Interface/Game/ScoreLabel.gd" type="Script" id=3]
+[ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=4]
 [ext_resource path="res://User Interface/Buttons/SettingsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://User Interface/Buttons/BackButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://User Interface/Game/TriesLabel.gd" type="Script" id=8]
@@ -49,6 +51,7 @@ anti_aliasing = false
 [node name="GameUiBar" type="HBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 4 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,23 +84,24 @@ margin_bottom = 600.0
 size_flags_horizontal = 10
 
 [node name="TriesIcon" type="TextureRect" parent="Score"]
+modulate = Color( 0.0745098, 0.537255, 0.847059, 1 )
 margin_top = 280.0
 margin_right = 40.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 40, 40 )
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="Tries" type="Label" parent="Score"]
 margin_left = 44.0
-margin_top = 293.0
+margin_top = 287.0
 margin_right = 84.0
-margin_bottom = 307.0
+margin_bottom = 313.0
 rect_min_size = Vector2( 40, 0 )
-custom_colors/font_color = Color( 0.0509804, 0.45098, 0.843137, 1 )
+custom_colors/font_color = Color( 0.0745098, 0.537255, 0.847059, 1 )
 text = "999"
 align = 1
 script = ExtResource( 8 )
@@ -116,11 +120,11 @@ stretch_mode = 1
 
 [node name="Matches" type="Label" parent="Score"]
 margin_left = 132.0
-margin_top = 293.0
+margin_top = 287.0
 margin_right = 232.0
-margin_bottom = 307.0
+margin_bottom = 313.0
 rect_min_size = Vector2( 100, 0 )
-custom_colors/font_color = Color( 0.0509804, 0.45098, 0.843137, 1 )
+custom_colors/font_color = Color( 0.0745098, 0.537255, 0.847059, 1 )
 text = "999 / 999"
 align = 1
 script = ExtResource( 3 )

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://User Interface/Styles/ButtonHover.tres" type="StyleBox" id=1]
 [ext_resource path="res://User Interface/Styles/Button.tres" type="StyleBox" id=2]
 [ext_resource path="res://User Interface/Styles/ButtonPress.tres" type="StyleBox" id=3]
 [ext_resource path="res://User Interface/Game/Icons/question.png" type="Texture" id=4]
+[ext_resource path="res://Common/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=5]
 
 [node name="GameButton" type="Button"]
 margin_right = 175.0
@@ -47,6 +48,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
 text = "My Text"
 align = 1
