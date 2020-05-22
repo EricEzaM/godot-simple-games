@@ -1,7 +1,5 @@
 extends Control
 
-export (Resource) var game_configuration
-
 onready var card = preload("res://Card/Card.tscn")
 onready var grid_container : GridContainer = $GridContainer
 onready var grid_state = $GridState
@@ -11,16 +9,16 @@ var unused_texture_ids = []
 
 
 func _ready():
-	unused_texture_ids = range(game_configuration.card_face_texture_set.textures.size())
-	initialise_cards(game_configuration.number_of_cards)
+	unused_texture_ids = range(GameConfiguration.card_face_texture_set.textures.size())
+	initialise_cards(GameConfiguration.number_of_cards)
 	_create_match_pairs()
-	grid_state.reset(game_configuration.number_of_cards / 2)
+	grid_state.reset(GameConfiguration.number_of_cards / 2)
 
 
 func initialise_cards(num_cards : int):	
 	remove_all_cards()
 	#	Calculate grid size and set columns
-	var grid_size = game_configuration.grid_size
+	var grid_size = GameConfiguration.grid_size
 	#	Error catching
 	if grid_size == Vector2():
 		return
@@ -51,10 +49,10 @@ func remove_all_cards():
 
 func _create_match_pairs():
 	# Use this to track which indices of 'cards' have been assigned a pair
-	var remaining_indices = range(game_configuration.number_of_cards)
+	var remaining_indices = range(GameConfiguration.number_of_cards)
 	randomize()
 
-	for pair_id in range(game_configuration.number_of_cards/2):
+	for pair_id in range(GameConfiguration.number_of_cards/2):
 		# Get 2 random cards, removing them from remaining cards after selection
 		# So they cannot be selected again
 		var i1 = randi() % remaining_indices.size()
@@ -67,11 +65,11 @@ func _create_match_pairs():
 		
 		randomize()
 		var tex_idx = unused_texture_ids[randi() % unused_texture_ids.size()]
-		var tex = game_configuration.card_face_texture_set.textures[tex_idx]
+		var tex = GameConfiguration.card_face_texture_set.textures[tex_idx]
 		unused_texture_ids.erase(tex_idx)
 
-		card_1.initialise_card(pair_id, tex, game_configuration.card_back_texture)
-		card_2.initialise_card(pair_id, tex, game_configuration.card_back_texture)
+		card_1.initialise_card(pair_id, tex, GameConfiguration.card_back_texture)
+		card_2.initialise_card(pair_id, tex, GameConfiguration.card_back_texture)
 
 
 func _get_card_rect_size():

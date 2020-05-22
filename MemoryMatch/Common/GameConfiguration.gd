@@ -1,5 +1,4 @@
-#class_name GameConfiguration
-extends Resource
+extends Node
 # Stores configuration for the game.
 
 # --- Signals

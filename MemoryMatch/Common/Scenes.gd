@@ -9,7 +9,7 @@ extends Node
 # --- Private Variables
 # --- Onready Variables
 
-onready var main_menu := "res://GameMain.tscn"
+onready var main_menu := "res://User Interface/Menus/Main/MainMenu.tscn"
 onready var configuration := "res://User Interface/Menus/Game Configuration/GameConfigurationOptions.tscn"
 onready var game := "res://Game.tscn"
 

@@ -1,8 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://User Interface/Styles/ButtonHover.tres" type="StyleBox" id=1]
-[ext_resource path="res://User Interface/Styles/Button.tres" type="StyleBox" id=2]
-[ext_resource path="res://User Interface/Styles/ButtonPress.tres" type="StyleBox" id=3]
+[ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://User Interface/Game/Icons/question.png" type="Texture" id=4]
 [ext_resource path="res://Common/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=5]
 
@@ -10,9 +8,7 @@
 margin_right = 175.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 175, 40 )
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = ExtResource( 2 )
+theme = ExtResource( 1 )
 align = 2
 expand_icon = true
 __meta__ = {

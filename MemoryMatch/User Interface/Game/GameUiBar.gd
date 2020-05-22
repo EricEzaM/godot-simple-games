@@ -5,7 +5,6 @@ extends HBoxContainer
 # --- Enums
 # --- Constants
 # --- Exported Variables
-export (String, FILE, "*.tscn") var back_scene
 # --- Public Variables
 # --- Private Variables
 # --- Onready Variables
@@ -28,4 +27,4 @@ func _go_back(confirmed = false):
 			funcref(self, "_go_back"),
 			[true])
 	else:
-		Events.emit_signal("scene_change_request", back_scene)
+		Events.emit_signal("scene_change_request", Scenes.main_menu)

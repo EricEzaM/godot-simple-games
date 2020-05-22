@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-export (String, FILE, "*.tscn") var play_scene
-
 func _ready():
 	$CenterContainer/VBoxContainer/PlayButton.connect("pressed", self, "_play")
 	$CenterContainer/VBoxContainer/SettingsButton.connect("pressed", self, "_options")
@@ -9,7 +7,7 @@ func _ready():
 	pass
 
 func _play():
-	Events.emit_signal("scene_change_request", play_scene)
+	Events.emit_signal("scene_change_request", Scenes.configuration)
 	
 
 func _options():

@@ -56,7 +56,6 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-back_scene = "res://User Interface/Menus/Main/MainMenu.tscn"
 
 [node name="BackButton" parent="." instance=ExtResource( 6 )]
 margin_top = 280.0

@@ -8,7 +8,6 @@
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 4 )
-play_scene = "res://User Interface/Menus/Game Configuration/GameConfigurationOptions.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
