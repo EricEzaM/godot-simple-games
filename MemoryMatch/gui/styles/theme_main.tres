@@ -14,17 +14,6 @@
 [ext_resource path="res://gui/icons/slider-grabber-hover.png" type="Texture" id=12]
 [ext_resource path="res://gui/styles/button_disabled.tres" type="StyleBox" id=13]
 
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [resource]

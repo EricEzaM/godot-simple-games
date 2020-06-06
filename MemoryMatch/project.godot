@@ -52,8 +52,8 @@ config/version="0.1.0"
 [autoload]
 
 Events="*res://autoload/events.gd"
-Scenes="*res://autoload/scenes.gd"
 GameConfiguration="*res://autoload/game_configuration.tscn"
+Scenes="*res://autoload/scenes.tscn"
 
 [display]
 
