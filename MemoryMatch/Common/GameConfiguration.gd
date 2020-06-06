@@ -6,7 +6,6 @@ extends Node
 # --- Constants
 # --- Exported Variables
 export (int) var number_of_cards
-export (int) var time_limit
 export (Array, Resource) var available_card_face_texture_sets
 export (Array, Texture) var available_card_back_textures
 # --- Public Variables

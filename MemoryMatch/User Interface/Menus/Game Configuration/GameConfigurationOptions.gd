@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 onready var number_of_cards_spinbox: SpinBox = $MarginContainer/ScrollContainer/VBoxContainer/NumberOfCardsContainer/SpinBox
-onready var time_limit_spinbox: SpinBox = $MarginContainer/ScrollContainer/VBoxContainer/TimeLimitContainer/SpinBox
 onready var card_face_selection = $MarginContainer/ScrollContainer/VBoxContainer/CardFaceSelection
 onready var card_back_selection = $MarginContainer/ScrollContainer/VBoxContainer/CardBackSelection
 onready var error_msg_label: Label = $MarginContainer/ScrollContainer/VBoxContainer/ErrorMessageLabel
@@ -11,7 +10,6 @@ onready var back_button: Button = $MarginContainer/ScrollContainer/VBoxContainer
 func _ready():
 	number_of_cards_spinbox.connect("value_changed", self, "_update_number_of_cards")
 	number_of_cards_spinbox.value = 16
-	time_limit_spinbox.connect("value_changed", self, "_update_time_limit")
 	
 	card_face_selection.connect("selection_updated", self, "_update_face_texture_set")
 	card_face_selection.texture_sets = GameConfiguration.available_card_face_texture_sets
@@ -39,10 +37,6 @@ func _on_start_pressed():
 
 func _on_back_pressed():
 	Events.emit_signal("scene_change_request", Scenes.main_menu)
-
-
-func _update_time_limit(tl):
-	pass
 
 
 func _update_face_texture_set(ts: TextureSet):

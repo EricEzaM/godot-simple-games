@@ -9,8 +9,10 @@ var tries_count = 0
 var match_count = 0
 var max_match_count = -1
 
+var start_time_unix = 0
+var end_time_unix = 0
+
 func _ready():
-	# Don't need to pass binds since cards are stored on the class level
 	reset_timer.connect("timeout", self, "_on_timer_expired")
 
 
@@ -20,6 +22,7 @@ func reset(max_matches: int):
 	max_match_count = max_matches
 	Events.emit_signal("match_count_updated", match_count, max_match_count)
 	Events.emit_signal("tries_count_updated", 0)
+	start_time_unix = OS.get_unix_time()
 	_reset_card_selection()
 
 
@@ -57,7 +60,9 @@ func _cards_match():
 	
 	if match_count == max_match_count:
 #		Game finished!
-		Events.emit_signal("game_complete", tries_count, match_count)
+		end_time_unix = OS.get_unix_time()
+		var seconds_taken = end_time_unix - start_time_unix
+		Events.emit_signal("game_complete", tries_count, match_count, seconds_taken)
 
 
 func _cards_different():

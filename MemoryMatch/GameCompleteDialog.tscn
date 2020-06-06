@@ -47,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TimeLabel" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer"]
+[node name="MainLabel" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer"]
 margin_right = 614.0
 margin_bottom = 26.0
 text = "You completed the level in 5 minutes and 7 seconds!"
@@ -65,7 +65,7 @@ __meta__ = {
 [node name="GridContainer" type="GridContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
 margin_top = 38.0
 margin_right = 614.0
-margin_bottom = 124.0
+margin_bottom = 154.0
 columns = 3
 
 [node name="Attempts" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/GridContainer"]
@@ -148,4 +148,33 @@ margin_left = 590.0
 margin_top = 60.0
 margin_right = 614.0
 margin_bottom = 86.0
+texture = ExtResource( 2 )
+
+[node name="Time Taken" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 90.0
+margin_right = 291.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Time Taken:"
+align = 1
+autowrap = true
+
+[node name="TimeTakenVal" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 295.0
+margin_top = 90.0
+margin_right = 586.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "5m 7s"
+align = 1
+valign = 2
+autowrap = true
+
+[node name="TimeTakenNewRecord" type="TextureRect" parent="AcceptDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 590.0
+margin_top = 90.0
+margin_right = 614.0
+margin_bottom = 116.0
 texture = ExtResource( 2 )

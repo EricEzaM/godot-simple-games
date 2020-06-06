@@ -44,7 +44,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 margin_right = 524.0
-margin_bottom = 522.0
+margin_bottom = 486.0
 size_flags_horizontal = 7
 alignment = 1
 
@@ -83,47 +83,25 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 step = 2.0
 
-[node name="TimeLimitContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 margin_top = 86.0
 margin_right = 524.0
-margin_bottom = 118.0
-
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/TimeLimitContainer"]
-margin_right = 260.0
-margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
-text = "Time Limit"
-
-[node name="SpinBox" type="SpinBox" parent="MarginContainer/ScrollContainer/VBoxContainer/TimeLimitContainer"]
-margin_left = 264.0
-margin_right = 524.0
-margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-step = 2.0
-rounded = true
-
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 122.0
-margin_right = 524.0
-margin_bottom = 126.0
+margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardFaceSelectionLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 130.0
+margin_top = 94.0
 margin_right = 524.0
-margin_bottom = 156.0
+margin_bottom = 120.0
 custom_fonts/font = ExtResource( 3 )
 text = "Card Face Selection"
 
 [node name="CardFaceSelection" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 160.0
+margin_top = 124.0
 margin_right = 524.0
-margin_bottom = 288.0
+margin_bottom = 252.0
 script = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/CardFaceSelection"]
@@ -148,24 +126,24 @@ texture_normal = ExtResource( 6 )
 expand = true
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 292.0
+margin_top = 256.0
 margin_right = 524.0
-margin_bottom = 296.0
+margin_bottom = 260.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardBackSelectionLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 300.0
+margin_top = 264.0
 margin_right = 524.0
-margin_bottom = 326.0
+margin_bottom = 290.0
 custom_fonts/font = ExtResource( 3 )
 text = "Card Back Selection"
 
 [node name="CardBackSelection" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 330.0
+margin_top = 294.0
 margin_right = 524.0
-margin_bottom = 458.0
+margin_bottom = 422.0
 script = ExtResource( 11 )
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/CardBackSelection"]
@@ -190,17 +168,17 @@ texture_normal = ExtResource( 6 )
 expand = true
 
 [node name="HSeparator4" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 462.0
+margin_top = 426.0
 margin_right = 524.0
-margin_bottom = 466.0
+margin_bottom = 430.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 470.0
+margin_top = 434.0
 margin_right = 524.0
-margin_bottom = 502.0
+margin_bottom = 466.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,9 +200,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Start Game"
 
 [node name="ErrorMessageLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 506.0
+margin_top = 470.0
 margin_right = 524.0
-margin_bottom = 522.0
+margin_bottom = 486.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Error message"
