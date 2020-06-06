@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-392ce02dd08ab434647d05a2948ec15a.stex"
+path="res://.import/tile_directionWest.png-925f03ef71c8224b74b695804be775b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card/icon.png"
-dest_files=[ "res://.import/icon.png-392ce02dd08ab434647d05a2948ec15a.stex" ]
+source_file="res://card_textures/faces/basic_yellow/tile_directionWest.png"
+dest_files=[ "res://.import/tile_directionWest.png-925f03ef71c8224b74b695804be775b3.stex" ]
 
 [params]
 

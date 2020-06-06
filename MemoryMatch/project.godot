@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/color-palette/ColorTile.gd"
 }, {
-"base": "Reference",
-"class": "Extensions",
-"language": "GDScript",
-"path": "res://Extensions.gd"
-}, {
 "base": "Container",
 "class": "FlexGridContainer",
 "language": "GDScript",
@@ -37,11 +32,10 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "TextureSet",
 "language": "GDScript",
-"path": "res://TextureSets/TextureSet.gd"
+"path": "res://card_textures/texture_set.gd"
 } ]
 _global_script_class_icons={
 "ColorTile": "",
-"Extensions": "",
 "FlexGridContainer": "res://addons/color-palette/utilities/FlexGridContainerIcon.png",
 "Palette": "",
 "PaletteImporter": "",
@@ -51,15 +45,15 @@ _global_script_class_icons={
 [application]
 
 config/name="MemoryMatch"
-run/main_scene="res://GameMain.tscn"
-config/icon="res://User Interface/Game/Icons/swap.svg"
+run/main_scene="res://game.tscn"
+config/icon="res://gui/icons/swap.svg"
 config/version="0.1.0"
 
 [autoload]
 
-Events="*res://Common/Events.gd"
-Scenes="*res://Common/Scenes.gd"
-GameConfiguration="*res://Common/GameConfiguration.tscn"
+Events="*res://autoload/events.gd"
+Scenes="*res://autoload/scenes.gd"
+GameConfiguration="*res://autoload/game_configuration.tscn"
 
 [display]
 

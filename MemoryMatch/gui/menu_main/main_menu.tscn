@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gui/buttons/quit_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gui/buttons/play_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/Background.png" type="Texture" id=3]
+[ext_resource path="res://gui/menu_main/main_menu.gd" type="Script" id=4]
+[ext_resource path="res://gui/buttons/settings_button.tscn" type="PackedScene" id=5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 362.0
+margin_top = 236.0
+margin_right = 662.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="PlayButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 300.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+
+[node name="SettingsButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 44.0
+margin_right = 300.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+
+[node name="QuitButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 88.0
+margin_right = 300.0
+margin_bottom = 128.0
+custom_colors/font_color = Color( 0.85098, 0.85098, 0.85098, 1 )

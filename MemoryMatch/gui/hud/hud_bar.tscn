@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://card/icon.png" type="Texture" id=1]
+[ext_resource path="res://gui/icons/swap.svg" type="Texture" id=2]
+[ext_resource path="res://gui/hud/score_label.gd" type="Script" id=3]
+[ext_resource path="res://gui/styles/theme_main.tres" type="Theme" id=4]
+[ext_resource path="res://gui/buttons/settings_button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/buttons/back_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/hud/tries_label.gd" type="Script" id=8]
+[ext_resource path="res://gui/hud/hud_bar.gd" type="Script" id=9]
+
+
+
+
+
+
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.223529, 0.635294, 0.901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.137255, 0.545098, 0.792157, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.054902, 0.486275, 0.756863, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0666667, 0.392157, 0.588235, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0862745, 0.592157, 0.913725, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.105882, 0.466667, 0.686275, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[node name="HudBar" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="." instance=ExtResource( 6 )]
+margin_top = 280.0
+margin_bottom = 320.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="SettingsButton" parent="." instance=ExtResource( 5 )]
+margin_left = 179.0
+margin_top = 280.0
+margin_right = 354.0
+margin_bottom = 320.0
+size_flags_vertical = 4
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="Score" type="HBoxContainer" parent="."]
+margin_left = 792.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 10
+
+[node name="TriesIcon" type="TextureRect" parent="Score"]
+modulate = Color( 0.0745098, 0.537255, 0.847059, 1 )
+margin_top = 280.0
+margin_right = 40.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Tries" type="Label" parent="Score"]
+margin_left = 44.0
+margin_top = 287.0
+margin_right = 84.0
+margin_bottom = 313.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color = Color( 0.0745098, 0.537255, 0.847059, 1 )
+text = "999"
+align = 1
+script = ExtResource( 8 )
+
+[node name="MatchesIcon" type="TextureRect" parent="Score"]
+margin_left = 88.0
+margin_top = 280.0
+margin_right = 128.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="Matches" type="Label" parent="Score"]
+margin_left = 132.0
+margin_top = 287.0
+margin_right = 232.0
+margin_bottom = 313.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 0.0745098, 0.537255, 0.847059, 1 )
+text = "999 / 999"
+align = 1
+script = ExtResource( 3 )

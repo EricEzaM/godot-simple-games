@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Card/icon.png" type="Texture" id=1]
-[ext_resource path="res://Card/Card.gd" type="Script" id=2]
-[ext_resource path="res://Card/CardBorder.shader" type="Shader" id=3]
+[ext_resource path="res://card/icon.png" type="Texture" id=1]
+[ext_resource path="res://card/card_border.shader" type="Shader" id=2]
+[ext_resource path="res://card/card.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 3 )
+shader = ExtResource( 2 )
 shader_param/circle_radius = 1.0
 shader_param/border_thickness = 0.0
 shader_param/border_smoothing_distance = 0.2
@@ -53,7 +53,7 @@ size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

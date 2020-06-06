@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://autoload/game_configuration.gd" type="Script" id=1]
+[ext_resource path="res://card_textures/faces/ts_basic_yellow.tres" type="Resource" id=2]
+[ext_resource path="res://card_textures/faces/ts_basic_green.tres" type="Resource" id=3]
+[ext_resource path="res://card_textures/faces/basic_green/tile1.png" type="Texture" id=4]
+[ext_resource path="res://card_textures/faces/basic_green/tile0.png" type="Texture" id=5]
+
+
+
+
+
+
+
+
+
+
+
+[node name="GameConfiguration" type="Node"]
+script = ExtResource( 1 )
+number_of_cards = 16
+available_card_face_texture_sets = [ ExtResource( 3 ), ExtResource( 2 ) ]
+available_card_back_textures = [ ExtResource( 5 ), ExtResource( 4 ) ]

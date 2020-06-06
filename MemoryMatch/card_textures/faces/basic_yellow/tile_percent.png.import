@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-392ce02dd08ab434647d05a2948ec15a.stex"
+path="res://.import/tile_percent.png-cb466b5c3f6a4ac43645d646a021536a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card/icon.png"
-dest_files=[ "res://.import/icon.png-392ce02dd08ab434647d05a2948ec15a.stex" ]
+source_file="res://card_textures/faces/basic_yellow/tile_percent.png"
+dest_files=[ "res://.import/tile_percent.png-cb466b5c3f6a4ac43645d646a021536a.stex" ]
 
 [params]
 
