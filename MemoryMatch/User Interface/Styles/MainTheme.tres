@@ -5,14 +5,15 @@
 [ext_resource path="res://User Interface/Styles/ButtonPress.tres" type="StyleBox" id=3]
 [ext_resource path="res://User Interface/Styles/Panel.tres" type="StyleBox" id=4]
 [ext_resource path="res://User Interface/Styles/LineEdit.tres" type="StyleBox" id=5]
-[ext_resource path="res://User Interface/Menus/Icons/spinbox_updown.png" type="Texture" id=6]
+[ext_resource path="res://User Interface/Icons/spinbox_updown.png" type="Texture" id=6]
 [ext_resource path="res://User Interface/Styles/PanelDialog.tres" type="StyleBox" id=7]
-[ext_resource path="res://Common/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=8]
+[ext_resource path="res://User Interface/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=8]
 [ext_resource path="res://User Interface/Styles/Slider.tres" type="StyleBox" id=9]
 [ext_resource path="res://User Interface/Styles/SliderGrabberArea.tres" type="StyleBox" id=10]
-[ext_resource path="res://User Interface/Menus/Icons/slider-grabber.png" type="Texture" id=11]
-[ext_resource path="res://User Interface/Menus/Icons/slider-grabber-hover.png" type="Texture" id=12]
+[ext_resource path="res://User Interface/Icons/slider-grabber.png" type="Texture" id=11]
+[ext_resource path="res://User Interface/Icons/slider-grabber-hover.png" type="Texture" id=12]
 [ext_resource path="res://User Interface/Styles/ButtonDisabled.tres" type="StyleBox" id=13]
+
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

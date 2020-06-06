@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slider-grabber-hover.png-03fdf4a904bd750646d3ca2c588f71aa.stex"
+path="res://.import/slider-grabber-hover.png-bfde3eb2ff0e641928e234a0d59300b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/Menus/Icons/slider-grabber-hover.png"
-dest_files=[ "res://.import/slider-grabber-hover.png-03fdf4a904bd750646d3ca2c588f71aa.stex" ]
+source_file="res://User Interface/Icons/slider-grabber-hover.png"
+dest_files=[ "res://.import/slider-grabber-hover.png-bfde3eb2ff0e641928e234a0d59300b2.stex" ]
 
 [params]
 

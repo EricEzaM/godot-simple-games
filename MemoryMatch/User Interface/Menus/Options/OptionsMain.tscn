@@ -2,8 +2,9 @@
 
 [ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://User Interface/Menus/Options/OptionsSlider.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Common/Fonts/Montserrat-Regular-30.tres" type="DynamicFont" id=3]
+[ext_resource path="res://User Interface/Fonts/Montserrat-Regular-30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://User Interface/Menus/Options/OptionsMain.gd" type="Script" id=4]
+
 
 [node name="PanelContainer" type="PanelContainer"]
 anchor_right = 1.0

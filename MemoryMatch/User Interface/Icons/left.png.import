@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/right.png-0a1f9896978b944501f277801055fc5a.stex"
+path="res://.import/left.png-8b931f454d191f66f2a6139e4f7b1c40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/Menus/Icons/right.png"
-dest_files=[ "res://.import/right.png-0a1f9896978b944501f277801055fc5a.stex" ]
+source_file="res://User Interface/Icons/left.png"
+dest_files=[ "res://.import/left.png-8b931f454d191f66f2a6139e4f7b1c40.stex" ]
 
 [params]
 

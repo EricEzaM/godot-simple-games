@@ -53,6 +53,7 @@ _global_script_class_icons={
 config/name="MemoryMatch"
 run/main_scene="res://GameMain.tscn"
 config/icon="res://User Interface/Game/Icons/swap.svg"
+config/version="0.1.0"
 
 [autoload]
 

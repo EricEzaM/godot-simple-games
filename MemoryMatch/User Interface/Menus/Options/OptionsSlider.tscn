@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=1]
-[ext_resource path="res://Common/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://User Interface/Fonts/Montserrat-Regular-20.tres" type="DynamicFont" id=2]
+
 
 [node name="OptionsSlider" type="HBoxContainer"]
 margin_right = 287.0

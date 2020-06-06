@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/switch-on.svg-2eb5a719e934d68a95deb9ed95efedee.stex"
+path="res://.import/switch-on.svg-9b51f4311ceddc2d686316925fa51bed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/Menus/Icons/switch-on.svg"
-dest_files=[ "res://.import/switch-on.svg-2eb5a719e934d68a95deb9ed95efedee.stex" ]
+source_file="res://User Interface/Icons/switch-on.svg"
+dest_files=[ "res://.import/switch-on.svg-9b51f4311ceddc2d686316925fa51bed.stex" ]
 
 [params]
 

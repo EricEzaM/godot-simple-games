@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GameCompleteDialog.gd" type="Script" id=1]
-[ext_resource path="res://User Interface/Menus/Icons/slider-grabber.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Icons/slider-grabber.png" type="Texture" id=2]
 [ext_resource path="res://User Interface/Styles/MainTheme.tres" type="Theme" id=3]
+
 
 [node name="CenterContainer" type="CenterContainer"]
 margin_right = 40.0

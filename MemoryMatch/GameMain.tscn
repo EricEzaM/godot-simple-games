@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://User Interface/Menus/Main/MainMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://User Interface/Main Menu/MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://User Interface/Menus/Options/OptionsMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameManager.gd" type="Script" id=4]
 [ext_resource path="res://User Interface/ConfirmationDialog/Confirmation.tscn" type="PackedScene" id=6]

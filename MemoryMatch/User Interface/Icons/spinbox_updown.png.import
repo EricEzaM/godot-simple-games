@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/left.png-2483635efee7679b6119445c946a000e.stex"
+path="res://.import/spinbox_updown.png-0ca4c5f837a0ecf5d3afeafa964bf2fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/Menus/Icons/left.png"
-dest_files=[ "res://.import/left.png-2483635efee7679b6119445c946a000e.stex" ]
+source_file="res://User Interface/Icons/spinbox_updown.png"
+dest_files=[ "res://.import/spinbox_updown.png-0ca4c5f837a0ecf5d3afeafa964bf2fa.stex" ]
 
 [params]
 
