@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://User Interface/Menus/Options/OptionsMenu.gd" type="Script" id=1]
-[ext_resource path="res://User Interface/Menus/Options/OptionsMain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://User Interface/Options Menu/OptionsMenu.gd" type="Script" id=1]
+[ext_resource path="res://User Interface/Options Menu/OptionsMain.tscn" type="PackedScene" id=2]
+
+
 
 [node name="OptionsMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
