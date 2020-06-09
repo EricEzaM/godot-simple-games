@@ -62,6 +62,7 @@ func _cards_match():
 #		Game finished!
 		end_time_unix = OS.get_unix_time()
 		var seconds_taken = end_time_unix - start_time_unix
+		$WinAudioController.play()
 		Events.emit_signal("game_complete", tries_count, match_count, seconds_taken)
 
 

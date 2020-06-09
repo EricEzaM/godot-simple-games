@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://card/card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://card_grid/grid.gd" type="Script" id=2]
 [ext_resource path="res://card_grid/grid_container.gd" type="Script" id=3]
 [ext_resource path="res://card_grid/grid_state.gd" type="Script" id=4]
+[ext_resource path="res://audio/confirmation_002.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/confirmation_003.ogg" type="AudioStream" id=6]
+[ext_resource path="res://audio/audio_controller.gd" type="Script" id=8]
 
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 5 )
 
-
-
-
-
-
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 6 )
 
 [node name="Grid" type="Control"]
 anchor_right = 1.0
@@ -67,3 +69,14 @@ script = ExtResource( 4 )
 [node name="ResetTimer" type="Timer" parent="GridState"]
 wait_time = 2.0
 one_shot = true
+
+[node name="WinAudioController" type="Node" parent="GridState"]
+script = ExtResource( 8 )
+
+[node name="Match1" type="AudioStreamPlayer" parent="GridState/WinAudioController"]
+stream = SubResource( 1 )
+bus = "Sounds"
+
+[node name="Match2" type="AudioStreamPlayer" parent="GridState/WinAudioController"]
+stream = SubResource( 2 )
+bus = "Sounds"

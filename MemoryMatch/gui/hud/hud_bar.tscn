@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://card/icon.png" type="Texture" id=1]
+[ext_resource path="res://gui/green-tick.png" type="Texture" id=1]
 [ext_resource path="res://gui/icons/swap.svg" type="Texture" id=2]
 [ext_resource path="res://gui/hud/score_label.gd" type="Script" id=3]
 [ext_resource path="res://gui/styles/theme_main.tres" type="Theme" id=4]
@@ -8,13 +8,6 @@
 [ext_resource path="res://gui/buttons/back_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/hud/tries_label.gd" type="Script" id=8]
 [ext_resource path="res://gui/hud/hud_bar.gd" type="Script" id=9]
-
-
-
-
-
-
-
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.223529, 0.635294, 0.901961, 1 )

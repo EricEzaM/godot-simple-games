@@ -3,16 +3,6 @@
 [ext_resource path="res://gui/styles/theme_main.tres" type="Theme" id=1]
 [ext_resource path="res://gui/fonts/montserrat_regular_20.tres" type="DynamicFont" id=2]
 
-
-
-
-
-
-
-
-
-
-
 [node name="OptionsSlider" type="HBoxContainer"]
 margin_right = 287.0
 margin_bottom = 40.0
@@ -38,6 +28,6 @@ margin_right = 287.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 50.0
+value = 100.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

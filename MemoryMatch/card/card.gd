@@ -39,11 +39,13 @@ func initialise_card(p_pair_id, p_show_texture, p_hide_texture):
 func show():
 	allow_click = false
 	anim_player.play("flip")
+	$ShowAudioController.play()
 
 
 func hide():
 	allow_click = false	
 	anim_player.play("flip")
+	$HideAudioController.play()
 
 
 func set_matched():

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/cardPlace1.ogg-ebcab26798e2779f53635f00456432a5.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

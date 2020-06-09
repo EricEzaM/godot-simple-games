@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://card/icon.png" type="Texture" id=1]
 [ext_resource path="res://card/card_border.shader" type="Shader" id=2]
 [ext_resource path="res://card/card.gd" type="Script" id=3]
+[ext_resource path="res://audio/audio_controller.gd" type="Script" id=4]
+[ext_resource path="res://audio/cardPlace1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/cardPlace3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://audio/cardShove1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://audio/cardShove2.ogg" type="AudioStream" id=8]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -41,6 +47,18 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 5 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 6 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+audio_stream = ExtResource( 7 )
+
+[sub_resource type="AudioStreamRandomPitch" id=6]
+audio_stream = ExtResource( 8 )
+
 [node name="Card" type="TextureRect"]
 material = SubResource( 1 )
 margin_right = 50.0
@@ -64,6 +82,30 @@ anims/flip = SubResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="ShowAudioController" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Show1" type="AudioStreamPlayer" parent="ShowAudioController"]
+stream = SubResource( 3 )
+bus = "Sounds"
+
+[node name="Show2" type="AudioStreamPlayer" parent="ShowAudioController"]
+stream = SubResource( 4 )
+bus = "Sounds"
+
+[node name="HideAudioController" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Hide1" type="AudioStreamPlayer" parent="HideAudioController"]
+stream = SubResource( 5 )
+volume_db = -10.0
+bus = "Sounds"
+
+[node name="Hide2" type="AudioStreamPlayer" parent="HideAudioController"]
+stream = SubResource( 6 )
+volume_db = -10.0
+bus = "Sounds"
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_hover"]
 [connection signal="mouse_exited" from="." to="." method="_on_hover_exit"]

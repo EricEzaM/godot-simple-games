@@ -1,6 +1,6 @@
 extends Control
 
-onready var card = preload("res://Card/Card.tscn")
+onready var card = preload("res://card/card.tscn")
 onready var grid_container : GridContainer = $GridContainer
 onready var grid_state = $GridState
 

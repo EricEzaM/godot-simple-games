@@ -20,7 +20,7 @@ layer = -1
 layer = 50
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+autoplay = true
 bus = "Music"
 
 [node name="Sounds" type="AudioStreamPlayer" parent="."]
-bus = "Sounds"
