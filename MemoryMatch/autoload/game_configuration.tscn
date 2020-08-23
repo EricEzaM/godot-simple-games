@@ -1,23 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://autoload/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://card_textures/faces/ts_basic_yellow.tres" type="Resource" id=2]
 [ext_resource path="res://card_textures/faces/ts_basic_green.tres" type="Resource" id=3]
-[ext_resource path="res://card_textures/faces/basic_green/tile1.png" type="Texture" id=4]
-[ext_resource path="res://card_textures/faces/basic_green/tile0.png" type="Texture" id=5]
-
-
-
-
-
-
-
-
-
-
+[ext_resource path="res://card_textures/faces/ts_basic_grey.tres" type="Resource" id=4]
+[ext_resource path="res://card_textures/faces/ts_basic_brown.tres" type="Resource" id=5]
+[ext_resource path="res://card_textures/backs/dark_2.png" type="Texture" id=6]
+[ext_resource path="res://card_textures/backs/purple_grey.png" type="Texture" id=7]
+[ext_resource path="res://card_textures/backs/dark.png" type="Texture" id=8]
+[ext_resource path="res://card_textures/backs/blue_pink.png" type="Texture" id=9]
+[ext_resource path="res://card_textures/backs/red_green.png" type="Texture" id=10]
+[ext_resource path="res://card_textures/backs/blue_yellow.png" type="Texture" id=11]
 
 [node name="GameConfiguration" type="Node"]
 script = ExtResource( 1 )
 number_of_cards = 16
-available_card_face_texture_sets = [ ExtResource( 3 ), ExtResource( 2 ) ]
-available_card_back_textures = [ ExtResource( 5 ), ExtResource( 4 ) ]
+available_card_face_texture_sets = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ]
+available_card_back_textures = [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 10 ) ]

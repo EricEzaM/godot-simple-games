@@ -9,7 +9,6 @@
 [ext_resource path="res://audio/cardShove1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://audio/cardShove2.ogg" type="AudioStream" id=8]
 
-
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
 shader_param/circle_radius = 1.0
@@ -88,11 +87,9 @@ script = ExtResource( 4 )
 
 [node name="Show1" type="AudioStreamPlayer" parent="ShowAudioController"]
 stream = SubResource( 3 )
-bus = "Sounds"
 
 [node name="Show2" type="AudioStreamPlayer" parent="ShowAudioController"]
 stream = SubResource( 4 )
-bus = "Sounds"
 
 [node name="HideAudioController" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -100,12 +97,10 @@ script = ExtResource( 4 )
 [node name="Hide1" type="AudioStreamPlayer" parent="HideAudioController"]
 stream = SubResource( 5 )
 volume_db = -10.0
-bus = "Sounds"
 
 [node name="Hide2" type="AudioStreamPlayer" parent="HideAudioController"]
 stream = SubResource( 6 )
 volume_db = -10.0
-bus = "Sounds"
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_hover"]
 [connection signal="mouse_exited" from="." to="." method="_on_hover_exit"]

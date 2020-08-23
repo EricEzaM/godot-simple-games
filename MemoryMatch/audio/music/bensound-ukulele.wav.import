@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bensound-ukulele.wav-5af661e9b5a14453814eae6629fcaa80.sample"
+
+[deps]
+
+source_file="res://audio/music/bensound-ukulele.wav"
+dest_files=[ "res://.import/bensound-ukulele.wav-5af661e9b5a14453814eae6629fcaa80.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -5,6 +5,8 @@ onready var current_scene = $Levels.get_child(0)
 func _ready():
 	Events.connect("scene_change_request", self, "change_scene")
 	Events.connect("toggle_options", self, "toggle_options")
+	
+	$Music.play_repeat_random()
 
 
 func change_scene(to_scene):
