@@ -2,6 +2,8 @@
 
 A simple memory game where you must remember where pairs of cards are located on a grid and flip them to match!
 
+Play demo here: https://iameric.itch.io/memory-match
+
 A quick demo video [available here](https://streamable.com/3oeitq)!
 
 ### Key Features
