@@ -23,9 +23,9 @@ Of course, you can download the project and run it yourself to fully explore how
 
 ### Screenshots
 
-![Main](../.assets.memory_match_main.png)
-![Config](../.assets.memory_match_game_config.png)
-![Main](../.assets.memory_match_in-game.png)
-![Main](../.assets.memory_match_game-done.png)
+![Main](../.assets/memory_match_main.png)
+![Config](../.assets/memory_match_game_config.png)
+![Main](../.assets/memory_match_in-game.png)
+![Main](../.assets/memory_match_game-done.png)
 
 #### Developed in Godot 3.2
